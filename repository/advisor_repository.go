@@ -16,7 +16,7 @@ type AdvisorRepository interface {
 
 func (a *advisorRepository) GetAll() ([]model.Advisor, error) {
 	var results []model.Advisor
-	err := a.repo.Get(&results, config.SELECT_ALL_ADVISORS)
+	err := a.repo.Select(&results, config.SELECT_ALL_ADVISORS)
 	return results, err
 }
 
