@@ -37,6 +37,14 @@ func InitDbConfig() *Config {
 	return newConfig
 }
 
+func CloseDB(db *sqlx.DB) {
+	log.Println("Connection ended.")
+	err := db.DB.Close()
+	if err != nil {
+		panic(err.Error())
+	}
+}
+
 func setDsn() string {
 	var dbEnv dbEnv
 	dbEnv.Name = os.Getenv("DB_NAME")
