@@ -3,13 +3,13 @@ package model
 import "encoding/json"
 
 type Student struct {
-	ID         int32
+	ID         int64
 	Name       string
 	Email      string
-	Department Department
 	GPA        float64
 	Credit     int
-	Advisor    Advisor
+	Department int64
+	Advisor    int64
 }
 
 func (s *Student) ToJSON() string {
