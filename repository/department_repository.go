@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"github.com/bagasfathoni/go-sqlx/config"
 	"github.com/bagasfathoni/go-sqlx/model"
 	"github.com/jmoiron/sqlx"
 )
@@ -10,6 +11,7 @@ type departmentRepository struct {
 }
 
 type DepartmentRepository interface {
+	GetAll() ([]model.Department, error)
 }
 
 func (d *departmentRepository) GetAll() ([]model.Department, error) {
