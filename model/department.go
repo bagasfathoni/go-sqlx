@@ -3,7 +3,7 @@ package model
 import "encoding/json"
 
 type Department struct {
-	ID     int32
+	ID     int64
 	Name   string
 	School string
 }
